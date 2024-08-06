@@ -257,3 +257,89 @@ ul {
 Project CSS
 ===============
 */
+main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sidebar-toggle {
+ position: fixed;
+ top:1rem;
+ left:1rem;
+ padding: 0.25rem;
+ background-color: transparent;
+ border-color: transparent;
+ cursor: pointer;
+ font-size: 1.25rem;
+}
+.modal-container {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  visibility: hidden;
+  opacity: 0;
+  background-color: rgb(0,0,0,0.3);
+  display: grid;
+  place-items: center;
+}
+.modal-content {
+  background-color: white;
+  padding: 1rem;
+  
+  width: 100vw;
+  max-width: 720px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  height: 10rem;
+}
+
+.close-modal {
+  position: absolute;
+  top:10px;
+  border: transparent;
+  background-color: transparent;
+  cursor: pointer;
+  right: 10px;
+}
+.show-modal {
+  transition: 0.15s ease-in-out;
+  z-index: 1;
+  visibility: visible;
+  opacity: 1;
+}
+.sidebar {
+  height: 100vh;
+  transform: translateX(-100%);
+  display: grid;
+  position: fixed;
+  background-color: white;
+  gap: 1rem;
+  width: 100vw;
+  top:0;
+  left:0;
+  grid-template-rows: auto 1fr auto;
+  padding: 1rem;
+}
+.sidebar-header {
+  position: relative;
+  
+}
+.cross {
+  position: absolute;
+  border: transparent;
+  background-color: transparent;
+  cursor: pointer;
+  right: 10px;
+}
+
+.show-sidebar {
+  transform: translateX(0);
+}
+
+@media screen and (min-width:760px) {
+  .sidebar {
+    width: 300px;
+  }
+}
